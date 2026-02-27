@@ -1,0 +1,93 @@
+/*
+Theme Name: CB Mishra Portfolio
+Theme URI: https://cbmishra.com
+Author: C B Mishra
+Author URI: https://cbmishra.com
+Description: A modern, dark portfolio theme for C B Mishra - Strategic Technical Project Manager. Features PWA support, mobile-first design, editable sections via ACF, and smooth animations.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cbmishra-portfolio
+Tags: portfolio, dark, one-page, responsive, pwa, custom-menu, featured-images, editor-style
+
+/* ====================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ==================================== */
+:root {
+  /* Dark Mode (Default) */
+  --bg-primary: #050A14;
+  --bg-secondary: #0A1628;
+  --bg-card: #0D1B2A;
+  --bg-card-hover: #112236;
+  --bg-glass: rgba(13, 27, 42, 0.85);
+
+  --text-primary: #E8EFF7;
+  --text-secondary: #A0B3CC;
+  --text-muted: #5A7A99;
+
+  --accent-primary: #00D4FF;
+  --accent-secondary: #0095B3;
+  --accent-glow: rgba(0, 212, 255, 0.15);
+  --accent-hire: #FF6B35;
+  --accent-hire-hover: #FF8A5C;
+
+  --border-color: rgba(0, 212, 255, 0.12);
+  --border-strong: rgba(0, 212, 255, 0.3);
+
+  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.1);
+  --shadow-hover: 0 8px 48px rgba(0, 212, 255, 0.15);
+
+  --gradient-hero: linear-gradient(135deg, #050A14 0%, #0A1628 50%, #050A14 100%);
+  --gradient-accent: linear-gradient(135deg, #00D4FF 0%, #0095B3 100%);
+  --gradient-card: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 149, 179, 0.02) 100%);
+  --gradient-section: linear-gradient(180deg, #050A14 0%, #0A1628 50%, #050A14 100%);
+
+  --font-display: 'Clash Display', 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --header-height: 72px;
+  --max-width: 1280px;
+  --section-padding: clamp(60px, 8vw, 120px);
+}
+
+/* Light Mode */
+[data-theme="light"] {
+  --bg-primary: #F0F4F8;
+  --bg-secondary: #E4EBF3;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F7FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+
+  --text-primary: #0A1628;
+  --text-secondary: #3A5068;
+  --text-muted: #8099B3;
+
+  --accent-primary: #0073A8;
+  --accent-secondary: #005C87;
+  --accent-glow: rgba(0, 115, 168, 0.12);
+
+  --border-color: rgba(0, 115, 168, 0.15);
+  --border-strong: rgba(0, 115, 168, 0.35);
+
+  --shadow-card: 0 4px 32px rgba(10, 22, 40, 0.1);
+  --shadow-glow: 0 0 40px rgba(0, 115, 168, 0.08);
+  --shadow-hover: 0 8px 48px rgba(0, 115, 168, 0.18);
+
+  --gradient-hero: linear-gradient(135deg, #F0F4F8 0%, #E4EBF3 50%, #F0F4F8 100%);
+  --gradient-card: linear-gradient(135deg, rgba(0, 115, 168, 0.04) 0%, rgba(0, 92, 135, 0.02) 100%);
+  --gradient-section: linear-gradient(180deg, #F0F4F8 0%, #E4EBF3 50%, #F0F4F8 100%);
+}
+*/
