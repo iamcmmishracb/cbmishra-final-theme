@@ -6,8 +6,10 @@
  */
 get_header();
 
-$paged   = max(1, get_query_var('paged'));
+// FIX: On static pages, WordPress uses 'page' query var, not 'paged'
+$paged    = max(1, get_query_var('paged'), get_query_var('page'));
 $per_page = 9;
+
 $bq = new WP_Query([
     'post_type'      => 'post',
     'posts_per_page' => $per_page,
@@ -44,9 +46,11 @@ $bq = new WP_Query([
                 <?php if ($bq->max_num_pages > 1): ?>
                 <nav class="pagination" aria-label="Blog pagination" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:56px;">
                     <?php
+                    // FIX: Use get_permalink() for the current page as the base
+                    $base_url = get_permalink();
                     $links = paginate_links([
-                        'base'      => str_replace(PHP_INT_MAX,'%#%',esc_url(get_pagenum_link(PHP_INT_MAX))),
-                        'format'    => '?paged=%#%',
+                        'base'      => trailingslashit( $base_url ) . '%_%',
+                        'format'    => 'page/%#%/',
                         'current'   => $paged,
                         'total'     => $bq->max_num_pages,
                         'prev_text' => '← Prev',
@@ -70,8 +74,8 @@ $bq = new WP_Query([
                     ?>
                 </nav>
                 <p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:16px;">
-                    Page <?php echo $paged; ?> of <?php echo $bq->max_num_pages; ?>
-                    &nbsp;·&nbsp; <?php echo $bq->found_posts; ?> articles total
+                    Page <?php echo esc_html($paged); ?> of <?php echo esc_html($bq->max_num_pages); ?>
+                    &nbsp;·&nbsp; <?php echo esc_html($bq->found_posts); ?> articles total
                 </p>
                 <?php endif; ?>
 
