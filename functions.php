@@ -573,4 +573,4 @@ add_filter('xmlrpc_enabled','__return_false');
 add_filter('excerpt_length', fn() => 25);
 add_filter('excerpt_more',   fn() => '...');
 
-require_once CBMISHRA_DIR . '/inc/template-tags.php';
+require_once CBMISHRA_DIR . '/inc/admin-columns-fix.php';
